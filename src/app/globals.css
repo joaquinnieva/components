@@ -24,8 +24,44 @@
   z-index: 20;
   background-color: gray;
   border-radius: 10px;
-  transition-delay: .5s;
+  transition-delay: 0.5s;
 }
 *[aria-label]:after {
   opacity: 0;
+}
+
+.animation-drop-open {
+  animation-duration: 0.1s;
+  animation-name: animationDropDown;
+  animation-timing-function: ease-out;
+}
+
+@keyframes animationDropDown {
+  from {
+    transform: translateY(-2%);
+    opacity: 0.8;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+.animation-drop-close {
+  animation-duration: 0.1s;
+  animation-name: animationDropDownClose;
+  visibility: hidden;
+}
+
+@keyframes animationDropDownClose {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
 }
